@@ -1,5 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import authenticate
+
+
 
 def home(req):
     return render(req, "home.html")
@@ -18,8 +21,16 @@ def signup(req):
 
 def login(req):
     if req.method == "POST":
-        pass
-        
+        f = AuthenticationForm(data = req.POST)
+        if f.is_valid():
+            u = f.cleaned_data.get('username')
+            p = f.cleaned_data.get('password')
+            user = authenticate(username = u, password = p)
+            print(user)
+            return HttpResponse("login ho gya")
+        else:
+            f = AuthenticationForm(data = req.POST)
+            return render(req, "login.html", {'form':f})
     f = AuthenticationForm()
     return render(req, "login.html", {'form':f})
 
