@@ -2,9 +2,15 @@
 {% load static %}
 {% block middle_section %}
 
-<h1>Signup page</h1>
-<h1 style="background-color:blue;">Login page</h1>
-<p>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis iste temporibus ullam perspiciatis blanditiis a dolores porro? Magnam, debitis in corporis quasi id similique animi mollitia qui, reprehenderit commodi repellendus magni error autem dolor. Accusantium illo nam sed! Inventore soluta deserunt tempora pariatur quas velit quaerat ipsum ea recusandae ducimus eligendi facilis, sint rerum perferendis, laborum, saepe aliquam incidunt necessitatibus non doloribus quisquam sapiente. Aut officiis quasi itaque neque, pariatur earum accusantium temporibus omnis fugit deserunt numquam dicta vel iusto quisquam quaerat in quibusdam, nihil aspernatur ducimus tempore sequi laborum cum a. Quam, aliquid eaque? Et nihil commodi tempore aliquid ab iusto modi optio officia quasi natus, eaque sunt vel odit reiciendis sit repellendus voluptatem odio corporis itaque totam. Sapiente doloribus exercitationem officiis animi commodi, voluptatem beatae magnam explicabo optio quae quod vitae at est reiciendis id, repellendus voluptates amet quo nesciunt voluptas tenetur! Fugiat vel autem harum provident quibusdam!
-</p>
+<div class="col-lg-5 shadow mx-auto p-0">
+    <div class="alert alert-success mx-auto"><h2>Signup</h2></div>
+    <div class="p-5">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_ul}}
+            <button type="submit" class="btn btn-success btn-cst"><h2>Signup</h2></button>
+        </form>
+    </div>
+</div>
+
 {% endblock middle_section %}

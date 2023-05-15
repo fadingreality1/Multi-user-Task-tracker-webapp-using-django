@@ -80,6 +80,7 @@ p {
   background-repeat: no-repear;
   background-size: cover;
 }
+
 .banner {
   display: flex;
   align-items: center;
@@ -102,6 +103,7 @@ p {
   padding: 0;
   width: 100%;
   transition: background 0.6s ease-in;
+  
   z-index: 99999;
 }
 .navbar .navbar-brand {
@@ -322,4 +324,13 @@ p {
     -ms-transform: scaleY(1);
     transform: scaleY(1);
   }
+}
+
+/* * custom css applied */
+.btn-cst{
+  margin-left: 40%; margin-top : 5%
+}
+
+.set1{
+  background-color: #40869b;
 }

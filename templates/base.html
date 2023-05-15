@@ -11,8 +11,12 @@
 </head>
 
 <body>
-	<header class="header-area overlay">
-		<nav class="navbar navbar-expand-md navbar-dark">
+	{% url 'home' as home %}
+	{% url 'login' as login %}
+	{% url 'signup' as signup %}
+	{% url 'contact' as contact %}
+	<header class="{% if request.path == home %}header-area overlay{% endif %}">
+		<nav class="navbar navbar-expand-md navbar-dark set1 ">
 			<div class="container">
 				<a href="{% url 'home' %}" class="navbar-brand">Task Tracker</a>
 
@@ -24,36 +28,25 @@
 
 				<div id="main-nav" class="collapse navbar-collapse">
 					<ul class="navbar-nav ml-auto">
-						<li><a href="{% url 'home' %}" class="nav-item nav-link active">Home</a></li>
+
+						<li><a href="{% url 'home' %}" class="nav-item nav-link {% if request.path == home %}active{% endif %}">Home</a></li>
 						<li class="dropdown">
-							<a href="{% url 'login' %}" class="nav-item nav-link" data-toggle="dropdown">Login/Signup</a>
+							<a href="{% url 'login' %}" class="nav-item nav-link {% if request.path == login %}active{% endif %} {% if request.path == signup %}active{% endif %}" data-toggle="dropdown">Login/Signup</a>
 							<div class="dropdown-menu">
 								<a href="{% url 'login' %}" class="dropdown-item">Login</a>
 								<a href="{% url 'signup' %}" class="dropdown-item">Signup</a>
 							</div>
 						</li>
-						{% comment %} <li class="dropdown">
-							<a href="#" class="nav-item nav-link" data-toggle="dropdown">Portfolio</a>
-							<div class="dropdown-menu">
-								<a href="{% url 'login' %}" class="dropdown-item">Dropdown Item 1</a>
-								<a href="#" class="dropdown-item">Dropdown Item 2</a>
-								<a href="#" class="dropdown-item">Dropdown Item 3</a>
-								<a href="#" class="dropdown-item">Dropdown Item 4</a>
-								<a href="#" class="dropdown-item">Dropdown Item 5</a>
-							</div>
-						</li> {% endcomment %}
-						<li><a href="#" class="nav-item nav-link">Contact</a></li>
+						<li><a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == contact %}active{% endif %}">Contact</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-
 		<div class="banner">
 			<div class="container">
-				<h1>Bootstrap 4 Navbar</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec elit ex. Etiam elementum lectus
-					et tempor molestie.</p>
-				<a href="#content" class="button button-primary">Learn More</a>
+				{% block home_section %}
+
+				{% endblock home_section %}
 			</div>
 		</div>
 	</header>
@@ -61,32 +54,6 @@
 
 	<section id="content" class="content">
 		<div class="container">
-			{% comment %} <div class="row">
-				<div class="col-md-4">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec elit ex. Etiam elementum
-						lectus et tempor molestie. Pellentesque vestibulum dui sit amet dui volutpat sollicitudin. Etiam
-						non erat finibus, iaculis nunc vel, convallis eros. Etiam efficitur tempor dui, vitae fringilla
-						ipsum tristique quis. Aliquam erat volutpat. Cras ullamcorper ex et viverra vulputate. Nam
-						lectus ligula, pretium nec risus nec, ultricies fringilla mauris. Proin quis venenatis neque,
-						iaculis porta nulla. </p>
-				</div>
-				<div class="col-md-4">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec elit ex. Etiam elementum
-						lectus et tempor molestie. Pellentesque vestibulum dui sit amet dui volutpat sollicitudin. Etiam
-						non erat finibus, iaculis nunc vel, convallis eros. Etiam efficitur tempor dui, vitae fringilla
-						ipsum tristique quis. Aliquam erat volutpat. Cras ullamcorper ex et viverra vulputate. Nam
-						lectus ligula, pretium nec risus nec, ultricies fringilla mauris. Proin quis venenatis neque,
-						iaculis porta nulla. </p>
-				</div>
-				<div class="col-md-4">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec elit ex. Etiam elementum
-						lectus et tempor molestie. Pellentesque vestibulum dui sit amet dui volutpat sollicitudin. Etiam
-						non erat finibus, iaculis nunc vel, convallis eros. Etiam efficitur tempor dui, vitae fringilla
-						ipsum tristique quis. Aliquam erat volutpat. Cras ullamcorper ex et viverra vulputate. Nam
-						lectus ligula, pretium nec risus nec, ultricies fringilla mauris. Proin quis venenatis neque,
-						iaculis porta nulla. </p>
-				</div>
-			</div> {% endcomment %}
 			{% block middle_section %}
 			
 			{% endblock middle_section %}
