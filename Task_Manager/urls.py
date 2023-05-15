@@ -25,4 +25,5 @@ urlpatterns = [
     path('login/', views.loginUser, name="login"),
     path('contact/', views.contact, name="contact"),
     path('contact/', views.contact, name="logout"),
+    path('neohome/', views.neohome, name="neohome"),
 ]

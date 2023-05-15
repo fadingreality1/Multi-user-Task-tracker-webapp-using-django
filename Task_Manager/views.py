@@ -37,3 +37,6 @@ def loginUser(req):
 
 def contact(req):
     return render(req, "contact.html")
+
+def neohome(req):
+    return render(req, "neohome.html")
