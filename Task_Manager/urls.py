@@ -26,4 +26,5 @@ urlpatterns = [
     path('contact/', views.contact, name="contact"),
     path('contact/', views.contact, name="logout"),
     path('neohome/', views.neohome, name="neohome"),
+    path('createtask/', views.createTask, name="createtask"),
 ]

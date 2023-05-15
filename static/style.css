@@ -405,6 +405,8 @@ td {
 
 .outer {
   border-radius: 25px;
+  height: max-content;
+  max-width: max-content;
 }
 
 .alert {

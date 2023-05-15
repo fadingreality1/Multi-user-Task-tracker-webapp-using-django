@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login
+from tasks.forms import TaskForm
 
 
 
@@ -39,4 +40,9 @@ def contact(req):
     return render(req, "contact.html")
 
 def neohome(req):
-    return render(req, "neohome.html")
+    form = TaskForm()
+    return render(req, "neohome.html", {'form': form})
+
+def createTask(req):
+    
+    return HttpResponse("task will be created")
