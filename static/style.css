@@ -385,6 +385,7 @@ p {
 /* * custom css applied */
 .btn-cst {
   margin-top: 5px;
+  border-radius: 10px;
 }
 
 .set1 {
