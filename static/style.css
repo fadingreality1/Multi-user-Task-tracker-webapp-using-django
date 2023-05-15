@@ -340,3 +340,16 @@ p {
   font-size: 5vh;
   font-weight: bold;
 }
+
+.s-table th, td{
+  padding: 10px;
+}
+
+.outer{
+  border-radius: 25px;
+}
+
+.alert{
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
