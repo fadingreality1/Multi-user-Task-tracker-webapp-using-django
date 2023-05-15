@@ -3,11 +3,11 @@
 {% block middle_section %}
 
 <div class="col-lg-5 shadow mx-auto p-0">
-    <div class="alert alert-success mx-auto"><h2>Signup</h2></div>
+    <div class="alert alert-success mx-auto"><h2 class ="bt-cst">Signup</h2></div>
     <div class="p-5">
         <form action="" method="POST">
             {% csrf_token %}
-            {{form.as_ul}}
+            {{form.as_p}}
             <button type="submit" class="btn btn-success btn-cst"><h2>Signup</h2></button>
         </form>
     </div>

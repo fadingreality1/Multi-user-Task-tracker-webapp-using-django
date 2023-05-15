@@ -334,3 +334,9 @@ p {
 .set1{
   background-color: #40869b;
 }
+
+.bt-cst{
+  text-align: center;
+  font-size: 5vh;
+  font-weight: bold;
+}
