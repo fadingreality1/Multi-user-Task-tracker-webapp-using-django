@@ -62,3 +62,9 @@ def createTask(req):
 def logoutUser(req):
     logout(req)
     return redirect("home")
+
+@login_required(login_url="login")
+def deleteTask(req, id):
+    print(id)
+    Tasks.objects.get(pk = id).delete()
+    return redirect('neohome')
