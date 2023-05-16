@@ -20,9 +20,37 @@
     </div>
   </div>
   <div class="col">
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quisquam enim, placeat maxime soluta recusandae aspernatur quo dolor exercitationem unde perspiciatis! Maxime nesciunt ducimus possimus minus in provident tempora rem commodi corrupti sit, ea, voluptates perferendis a! Aliquam quis, consequatur deleniti veritatis pariatur tempore laborum, provident eos aspernatur, velit reiciendis cupiditate id sint natus laboriosam corporis! Soluta ex dolore voluptatibus illo! Saepe non maiores repudiandae, corporis vitae nesciunt cumque quis a veritatis numquam molestiae obcaecati, quae pariatur molestias ab dolore omnis. Facilis ipsam aspernatur iste asperiores repudiandae id at autem vitae ut similique doloremque optio aliquid corporis laborum nisi, magni architecto commodi blanditiis? Nam repellendus quis quibusdam fugit. Ipsa est modi consequuntur, officia nemo porro nihil deserunt accusamus eveniet ex corrupti inventore obcaecati quibusdam impedit earum saepe, aperiam alias adipisci, consequatur doloremque nesciunt sint? Odit laborum, eveniet animi reiciendis ducimus quas labore rerum minus architecto accusamus, illum maiores delectus autem.
-    </p>
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th>Sr.no</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Due Date</th>
+          <th>Creation Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for t in tasks %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{t.title}}</td>
+          <td>{% if t.status == 'p' %}
+            <i class="fa fa-square-o text-primary btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Mark as complete"></i>
+          {% else %}
+          <i class="fa fa-check-square-o text-primary btn m-0 p-0 d-none" data-toggle="tooltip" data-placement="bottom" title="Mark as todo"></i>
+          {% endif %}</td>
+          <td>{{t.due_date}}</td>
+          <td>{{t.creation_date}}</td>
+          <td>
+              <i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+              <i class="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 </div>
 

@@ -7,12 +7,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="{% static 'style.css' %}" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+		<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css'>
 	</head>
 
 	<body>
 		{% url 'home' as home %}
 		{% url 'login' as login %}
 		{% url 'signup' as signup %}
+		{% url 'logout' as logout %}
 		{% url 'neohome' as neohome %}
 		{% url 'contact' as contact %}
 		{% url 'createtask' as createtask %}
@@ -41,6 +44,15 @@
 									>Home</a
 								>
 							</li>
+							{% if request.user.is_authenticated %}
+							<li>
+								<a
+									href="{% url 'logout' %}"
+									class="nav-item nav-link"
+									>Logout</a
+								>
+							</li>
+							{% else %}
 							<li class="dropdown">
 								<a
 									href="{% url 'login' %}"
@@ -61,25 +73,21 @@
 									>
 								</div>
 							</li>
+							{% endif %}
+							{% if request.user.is_authenticated %}
 							<li>
 								<a
-									href="{% url 'logout' %}"
-									class="nav-item nav-link"
-									>Logout</a
+									href="{% url 'neohome' %}"
+									class="nav-item nav-link {% if request.path == neohome %}active{% endif %}"
+									>My Tasks</a
 								>
 							</li>
+							{% endif %}
 							<li>
 								<a
 									href="{% url 'contact' %}"
 									class="nav-item nav-link {% if request.path == contact %}active{% endif %}"
 									>Contact</a
-								>
-							</li>
-							<li>
-								<a
-									href="{% url 'neohome' %}"
-									class="nav-item nav-link {% if request.path == neohome %}active{% endif %}"
-									>Neohome</a
 								>
 							</li>
 						</ul>

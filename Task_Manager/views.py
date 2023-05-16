@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 from tasks.forms import TaskForm
-
+from tasks.models import Tasks
 
 
 def home(req):
@@ -39,10 +40,25 @@ def loginUser(req):
 def contact(req):
     return render(req, "contact.html")
 
+@login_required(login_url="login")
 def neohome(req):
-    form = TaskForm()
-    return render(req, "neohome.html", {'form': form})
+    if req.user.is_authenticated:
+        user = req.user
+        form = TaskForm()
+        alltasks = Tasks.objects.filter(user = user)
+        return render(req, "neohome.html", {'form': form, 'tasks':alltasks})
 
+@login_required(login_url="login")
 def createTask(req):
-    
-    return HttpResponse("task will be created")
+    if req.user.is_authenticated:
+        user = req.user
+        form = TaskForm(req.POST)
+        task = form.save(commit = False)
+        task.user = user
+        form.save()
+        return redirect("neohome")
+
+@login_required(login_url="login")
+def logoutUser(req):
+    logout(req)
+    return redirect("home")
