@@ -45,7 +45,7 @@ def neohome(req):
     if req.user.is_authenticated:
         user = req.user
         form = TaskForm()
-        alltasks = Tasks.objects.filter(user = user).order_by('due_date').order_by('-status')
+        alltasks = Tasks.objects.filter(user = user).order_by('-status', 'due_date')
         return render(req, "neohome.html", {'form': form, 'tasks':alltasks})
 
 @login_required(login_url="login")
