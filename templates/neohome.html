@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="col">
-    <h1>Hello <span style="text-transform: uppercase;">{{request.user}}</span></h1>{% if tasks %}<span class = "display-4">Here are your Tasks:-</span>
+    <h1>Hello <span style="text-transform: uppercase;">{{request.user}}</span></h1>{% if tasks %}
     <table class="table table-hover my-2">
       <thead class="thead-light">
         <tr>
@@ -34,14 +34,18 @@
       </thead>
       <tbody>
         {% for t in tasks %}
-        <tr>
+        <tr {% if t.status == 'c' %}style="text-decoration: line-through; background-color:#d4edda;" {% else %} style="background-color: #ffc107;" {% endif %}>
           <td>{{forloop.counter}}</td>
           <td>{{t.title}}</td>
-          <td>{% if t.status == 'p' %}
-            <i class="fa fa-square-o text-primary btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Mark as complete" style="font-size:24px;"></i>
+          <td>
+            <a href="/changestatus/{{t.id}}">
+              {% if t.status == 'p' %}  
+            <i class="fa fa-square-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Mark as complete" style="font-size:24px;"></i>
           {% else %}
-          <i class="fa fa-check-square-o text-primary btn m-0 p-0 d-none" data-toggle="tooltip" data-placement="bottom" title="Mark as todo" style="font-size:24px;"></i>
-          {% endif %}</td>
+          <i class="fa fa-check-square-o text-success btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Mark as todo" style="font-size:24px;"></i>
+          {% endif %}
+            </a>
+          </td>
           <td>{{t.due_date}}</td>
           <td>{{t.creation_date}}</td>
           <td>

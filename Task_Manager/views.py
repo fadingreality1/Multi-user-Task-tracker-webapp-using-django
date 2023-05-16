@@ -45,7 +45,7 @@ def neohome(req):
     if req.user.is_authenticated:
         user = req.user
         form = TaskForm()
-        alltasks = Tasks.objects.filter(user = user)
+        alltasks = Tasks.objects.filter(user = user).order_by('due_date').order_by('-status')
         return render(req, "neohome.html", {'form': form, 'tasks':alltasks})
 
 @login_required(login_url="login")
@@ -65,6 +65,18 @@ def logoutUser(req):
 
 @login_required(login_url="login")
 def deleteTask(req, id):
-    print(id)
     Tasks.objects.get(pk = id).delete()
     return redirect('neohome')
+
+@login_required(login_url="login")
+def changeStatus(req, id):
+    task = Tasks.objects.get(pk = id)
+    # print(task.status)
+    if task.status == 'p':
+        task.status = 'c'
+    else:
+        task.status = 'p'
+    task.save()
+    # print(task.status)
+    return redirect('neohome')
+    

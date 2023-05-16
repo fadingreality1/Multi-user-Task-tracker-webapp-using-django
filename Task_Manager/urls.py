@@ -28,4 +28,5 @@ urlpatterns = [
     path('neohome/', views.neohome, name="neohome"),
     path('createtask/', views.createTask, name="createtask"),
     path('delete/<int:id>', views.deleteTask, name="deletetask"),
+    path('changestatus/<int:id>', views.changeStatus, name="changestatus"),
 ]
