@@ -2,7 +2,7 @@
 {% load static %}
 {% block middle_section %}
 
-<div class="row">
+<div class="row p-0">
   <div class="col-xl-5 shadow mx-auto p-0 border border-primary outer" style="background-color:white;">
     <div class="alert alert-primary mx-auto"><h2 class="bt-cst">Add Task</h2></div>
     <div class="p-4">
@@ -21,22 +21,22 @@
   </div>
   <div class="col">
   {% if tasks %}
-    <table class="table table-hover my-2">
+    <table class="table table-hover my-2 text-center" style="border: solid #1e0065;">
       <thead class="thead-light">
         <tr>
-          <th>Sr.no</th>
-          <th>Title</th>
-          <th>Status</th>
-          <th>Due Date</th>
-          <th>Creation Date</th>
-          <th>Action</th>
+          <th style="font-size: large;">Sr.no</th>
+          <th style="font-size: large;">Title</th>
+          <th style="font-size: large;">Status</th>
+          <th style="font-size: large;">Due Date</th>
+          <th style="font-size: large;">Added Date</th>
+          <th style="font-size: large;">Action</th>
         </tr>
       </thead>
       <tbody>
         {% for t in tasks %}
         <tr {% if t.status == 'c' %}style="text-decoration: line-through; background-color:#d4edda;" {% else %} style="background-color: #FFFFCC;" {% endif %}>
-          <td>{{forloop.counter}}</td>
-          <td>{{t.title}}</td>
+          <td>{{forloop.counter}}.</td>
+          <td style="font-size: large;">{{t.title}}</td>
           <td>
             <a href="/changestatus/{{t.id}}">
               {% if t.status == 'p' %}  
@@ -49,7 +49,7 @@
           <td>{{t.due_date}}</td>
           <td>{{t.creation_date}}</td>
           <td>
-              <a href="/update/{{t.id}}"><i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit task" style="font-size:30px;"></i></a>
+              <a href="/update/{{t.id}}"><i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit task" style="font-size:30px;"></i></a>&nbsp;
               <a href="/delete/{{t.id}}"><i class="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete task" style="font-size:30px;"></i></a>
           </td>
         </tr>
