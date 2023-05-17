@@ -34,7 +34,7 @@
       </thead>
       <tbody>
         {% for t in tasks %}
-        <tr {% if t.status == 'c' %}style="text-decoration: line-through; background-color:#d4edda;" {% else %} style="background-color: #ffc107;" {% endif %}>
+        <tr {% if t.status == 'c' %}style="text-decoration: line-through; background-color:#d4edda;" {% else %} style="background-color: #FFFFCC;" {% endif %}>
           <td>{{forloop.counter}}</td>
           <td>{{t.title}}</td>
           <td>

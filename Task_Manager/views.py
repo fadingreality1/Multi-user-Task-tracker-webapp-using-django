@@ -1,11 +1,9 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from tasks.forms import TaskForm, UpdateForm
 from tasks.models import Tasks
-import datetime
-
 
 def home(req):
     return render(req, "home.html")
@@ -90,6 +88,7 @@ def update(req, id):
     if req.user != task.user:
         return redirect('neohome')
     f = UpdateForm(initial={'nt':task.title, 'nd': task.due_date})
+    f.base_fields['nd'].label = "New Due Date"
     return render(req, 'update.html', {'form':f})
 
     
