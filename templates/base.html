@@ -37,7 +37,7 @@
 
 					<div id="main-nav" class="collapse navbar-collapse">
 						<ul class="navbar-nav ml-auto">
-							<li>
+							<li class="{% if request.path == home %}active{% endif %}">
 								<a
 									href="{% url 'home' %}"
 									class="nav-item nav-link {% if request.path == home %}active{% endif %}"

@@ -195,7 +195,7 @@ p {
 
 .navbar-dark .navbar-nav .nav-link:focus,
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: #fff;
+  color: #fff700;
 }
 
 .navbar .dropdown-menu {
@@ -218,7 +218,7 @@ p {
 
 .navbar .dropdown-menu .dropdown-item:hover {
   background: transparent;
-  color: #c0ca33;
+  color: #fff700;
 }
 
 .navbar .dropdown-menu .dropdown-item::before {
@@ -228,7 +228,7 @@ p {
   left: 0;
   top: 0;
   width: 5px;
-  background-color: #c0ca33;
+  background-color: #fff700;
   opacity: 0;
   transition: opacity 0.2s ease-in;
 }
@@ -245,11 +245,11 @@ p {
 }
 
 .navbar.fixed-top.navbar-dark .navbar-nav .nav-link.active {
-  color: #c0ca33;
+  color: #e5ff00;
 }
 
 .navbar.fixed-top.navbar-dark .navbar-nav .nav-link::after {
-  background-color: #c0ca33;
+  background-color: #e5ff00;
 }
 
 .content {
@@ -295,7 +295,7 @@ p {
     left: 30%;
     right: 30%;
     height: 1px;
-    background-color: #fff;
+    background-color: yellow;
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
     transform: scaleX(0);
@@ -397,7 +397,7 @@ p {
 }
 
 .set1 {
-  background-color: #4c00ff;
+  background-color: #1e0065;
 }
 
 .bt-cst {
