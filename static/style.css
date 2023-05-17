@@ -426,6 +426,7 @@ td {
   border: solid rgb(59, 105, 255) 2px;
   text-align: justify;
   border-radius: 15px;
+  padding-top: 2%;
 }
 
 .alert2{
