@@ -4,7 +4,7 @@
 <div class="banner">
 	<div class="container">
 		{% if request.user.is_authenticated %}
-		<h1>Hello {{request.user}} </h1>	
+		<h1>👋 Hello {{request.user.first_name}},</h1>	
 		{% endif %}
 		<h1>Task Tracker</h1>
 		<p>
@@ -13,9 +13,9 @@
 			them
 		</p>
 		{% if request.user.is_authenticated %}
-		<a href="{% url 'neohome' %}" class="button button-primary">My Tasks</a>
+		<a href="{% url 'neohome' %}" class="button button-primary"><i class="fas fa-laptop" style='font-size:18px'></i> My Tasks</a>
 		{% else %}
-		<a href="{% url 'login' %}" class="button button-primary" ><i class='fas fa-sign-in-alt' style = "font-size:24px;"> Login</i></a>
+		<a href="{% url 'login' %}" class="button button-primary" ><i class='fas fa-sign-in-alt' style = "font-size:24px;"></i> Login</a>
 		{% endif %}
 	</div>
 </div>

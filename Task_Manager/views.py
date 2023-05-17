@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from tasks.forms import TaskForm, UpdateForm
+from django.contrib.auth.models import User
+from tasks.forms import TaskForm, UpdateForm, NewUserForm, ProfileUpdateForm
 from tasks.models import Tasks
 
 def home(req):
@@ -10,14 +11,14 @@ def home(req):
 
 def signup(req):
     if req.method == "POST":
-        f = UserCreationForm(req.POST)
+        f = NewUserForm(req.POST)
         if f.is_valid():
             user = f.save()
             if user is not None:
                 return redirect('login')
         else:
             return render(req, "signup.html", {'form':f})
-    f = UserCreationForm()
+    f = NewUserForm()
     return render(req, "signup.html", {'form':f})
 
 def loginUser(req):
@@ -91,4 +92,26 @@ def update(req, id):
     f.base_fields['nd'].label = "New Due Date"
     return render(req, 'update.html', {'form':f})
 
+@login_required(login_url="login")
+def profileUpdate(req):
+    ouser = User.objects.get(username = req.user)
     
+    f = ProfileUpdateForm(initial={'first_name':req.user.first_name, 'last_name': req.user.last_name, 'email': req.user.email, 'user':req.user.username})
+    
+    if req.method == "POST":
+        try:
+            u = req.POST.get('user')
+            if not str(u).isalnum():
+                return render(req,"proupdate.html", {'form': f,'mes':"Error: Enter a valid username. This value may contain only letters, numbers, and @/./+/-/_ characters."} )
+            if User.objects.filter(username = u).exists():
+                render(req,"proupdate.html", {'form': f,'mes':"Error: User Name Already Exists, Choose another."} )
+            ouser.username = u
+            ouser.first_name = req.POST.get('first_name')
+            ouser.last_name = req.POST.get('last_name')
+            ouser.email = req.POST.get('email')
+            ouser.save()
+            return redirect('home')
+        except:
+            return render(req,"proupdate.html", {'form': f,'mes':"Error: User Name Already Exists"} )
+        
+    return render(req, "proupdate.html", {'form': f,})

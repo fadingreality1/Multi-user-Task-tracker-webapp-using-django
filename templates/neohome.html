@@ -3,7 +3,7 @@
 {% block middle_section %}
 
 <div class="row">
-  <div class="col-xl-5 shadow mx-auto p-0 border border-primary outer">
+  <div class="col-xl-5 shadow mx-auto p-0 border border-primary outer" style="background-color:white;">
     <div class="alert alert-primary mx-auto"><h2 class="bt-cst">Add Task</h2></div>
     <div class="p-4">
       <form method="POST" action="{% url 'createtask' %}">
@@ -12,15 +12,15 @@
           {{form.as_table}}
         </table>
         <div class = "text-center">
-                  <button type="submit" class="btn btn-primary btn-cst">
-                      <h2>Submit</h2>
-                  </button>
+          <button type="submit" class="btn btn-primary btn-cst">
+            <h2>Submit</h2>
+          </button>
         </div>
       </form>
     </div>
   </div>
   <div class="col">
-    <h1>Hello <span style="text-transform: uppercase;">{{request.user}}</span></h1>{% if tasks %}
+    <h1>Hello <span style="text-transform: capfirst;">{{request.user.first_name}}</span></h1>{% if tasks %}
     <table class="table table-hover my-2">
       <thead class="thead-light">
         <tr>

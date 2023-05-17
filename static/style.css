@@ -14,6 +14,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
+  position: relative;
+  height: 100vh;
+  background-image: url('img/banner.jpg');
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repear;
+  background-size: cover;
+
 }
 
 h1 {
@@ -389,7 +397,7 @@ p {
 }
 
 .set1 {
-  background-color: #40869b;
+  background-color: #4c00ff;
 }
 
 .bt-cst {
@@ -418,4 +426,16 @@ td {
   border: solid rgb(59, 105, 255) 2px;
   text-align: justify;
   border-radius: 15px;
+}
+
+.alert2{
+  text-align: center;
+  border: solid;
+  width: fit-content;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+  margin: 10px auto;
 }
