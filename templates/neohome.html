@@ -42,15 +42,15 @@
               {% if t.status == 'p' %}  
             <i class="fa fa-square-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Mark as complete" style="font-size:24px;"></i>
           {% else %}
-          <i class="fa fa-check-square-o text-success btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Mark as todo" style="font-size:24px;"></i>
+          <i class="fa fa-check-square-o text-success btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Mark as pending" style="font-size:24px;"></i>
           {% endif %}
             </a>
           </td>
           <td>{{t.due_date}}</td>
           <td>{{t.creation_date}}</td>
           <td>
-              <a href="/update/{{t.id}}"><i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo" style="font-size:24px;"></i></a>
-              <a href="/delete/{{t.id}}"><i class="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo" style="font-size:24px;"></i></a>
+              <a href="/update/{{t.id}}"><i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit task" style="font-size:30px;"></i></a>
+              <a href="/delete/{{t.id}}"><i class="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete task" style="font-size:30px;"></i></a>
           </td>
         </tr>
         {% endfor %}

@@ -86,7 +86,7 @@ p {
 .header-area {
   position: relative;
   height: 100vh;
-  background: #5bc0de;
+  background-image: url('img/banner.jpg');
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repear;

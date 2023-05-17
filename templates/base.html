@@ -20,7 +20,7 @@
 		{% url 'contact' as contact %}
 		{% url 'createtask' as createtask %}
 		<header class="{% if request.path == home %}header-area overlay{% endif %}">
-			<nav class="navbar navbar-expand-md navbar-dark set1">
+			<nav class="navbar navbar-expand-md navbar-dark {% if request.path != home %}set1{% endif %}">
 				<div class="container">
 					<a href="{% url 'home' %}" class="navbar-brand">Task Tracker</a>
 
@@ -64,12 +64,12 @@
 									<a
 										href="{% url 'login' %}"
 										class="dropdown-item"
-										>Login</a
+										><i class='fas fa-sign-in-alt'></i> Login</a
 									>
 									<a
 										href="{% url 'signup' %}"
 										class="dropdown-item"
-										>Signup</a
+										><i class='fas fa-sign-in-alt fa-rotate-270'></i> Signup</a
 									>
 								</div>
 							</li>
@@ -94,13 +94,9 @@
 					</div>
 				</div>
 			</nav>
-			<div class="banner">
-				<div class="container">
-					{% block home_section %}
-					
-					{% endblock home_section %}
-				</div>
-			</div>
+			{% block home_section %}
+						
+			{% endblock home_section %}		
 		</header>
 
 		<section id="content" class="content">
