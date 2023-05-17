@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from tasks.forms import TaskForm
+from tasks.forms import TaskForm, UpdateForm
 from tasks.models import Tasks
+import datetime
 
 
 def home(req):
@@ -71,12 +72,24 @@ def deleteTask(req, id):
 @login_required(login_url="login")
 def changeStatus(req, id):
     task = Tasks.objects.get(pk = id)
-    # print(task.status)
     if task.status == 'p':
         task.status = 'c'
     else:
         task.status = 'p'
     task.save()
-    # print(task.status)
     return redirect('neohome')
+
+@login_required(login_url="login")
+def update(req, id):
+    task = Tasks.objects.get(pk = id)
+    if req.method == "POST":
+        task.title = req.POST.get('nt')
+        task.due_date = req.POST.get('nd')
+        task.save()
+        return redirect('neohome')
+    if req.user != task.user:
+        return redirect('neohome')
+    f = UpdateForm(initial={'nt':task.title, 'nd': task.due_date})
+    return render(req, 'update.html', {'form':f})
+
     
