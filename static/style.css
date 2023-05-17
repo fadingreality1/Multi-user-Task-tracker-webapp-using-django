@@ -406,8 +406,7 @@ p {
   font-weight: bold;
 }
 
-.s-table th,
-td {
+.s-table th, td {
   padding: 10px;
 }
 
