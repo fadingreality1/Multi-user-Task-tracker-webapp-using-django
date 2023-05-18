@@ -36,7 +36,7 @@
         {% for t in tasks %}
         <tr {% if t.status == 'c' %}style="text-decoration: line-through; background-color:#d4edda;" {% else %} style="background-color: #FFFFCC;" {% endif %}>
           <td>{{forloop.counter}}.</td>
-          <td style="font-size: large;">{{t.title}}</td>
+          <th style="font-size: large;">{{t.title}}</th>
           <td>
             <a href="/changestatus/{{t.id}}">
               {% if t.status == 'p' %}  
@@ -46,7 +46,7 @@
           {% endif %}
             </a>
           </td>
-          <td>{{t.due_date}}</td>
+          <th>{{t.due_date}}</th>
           <td>{{t.creation_date}}</td>
           <td>
               <a href="/update/{{t.id}}"><i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit task" style="font-size:30px;"></i></a>&nbsp;
