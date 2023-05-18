@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
@@ -115,3 +115,8 @@ def profileUpdate(req):
             return render(req,"proupdate.html", {'form': f,'mes':"Error: User Name Already Exists"} )
         
     return render(req, "proupdate.html", {'form': f,})
+
+@login_required(login_url="login")
+def deleteProfile(req):
+    User.objects.get(username = req.user).delete()
+    return redirect('home')

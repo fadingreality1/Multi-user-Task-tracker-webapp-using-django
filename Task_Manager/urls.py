@@ -30,4 +30,5 @@ urlpatterns = [
     path('changestatus/<int:id>', views.changeStatus, name="changestatus"),
     path('update/<int:id>', views.update, name="update"),
     path('profileupdate/', views.profileUpdate, name="profileupdate"),
+    path('profileupdate/deleteprofile/', views.deleteProfile, name="deleteprofile"),
 ]
