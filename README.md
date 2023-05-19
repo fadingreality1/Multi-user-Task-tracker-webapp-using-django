@@ -97,5 +97,5 @@ you'll have to enter name, email and password and then you can access admin pane
 
 ## Environment Variables
 
-I haven't desinged it's frontend to be resposive so it will look good only on PC.
+I haven't designed it's frontend to be resposive so it will look good only on PC.
 You can make contributions to it if you want about frontend or any other functionality.
