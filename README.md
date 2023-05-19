@@ -5,6 +5,25 @@ This web application allows users to register and create task lists with deadlin
 
 https://drive.google.com/file/d/1MDFBwBi20awV4WCsdnI2DNqk5lWpLNTC/view?usp=sharing
 
+## Screenshots
+
+![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/22466417-890d-48de-9c88-398d9fac6225)
+
+![imgae](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/9ea297e3-a7b5-4354-9c36-10ec0c9b68d2)
+
+![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/d6a8c285-6ebd-4601-b7ea-082bb65853e7)
+
+![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/40dd83ac-53c6-4650-bb86-9909c0369c16)
+
+![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/933dc593-a14d-4787-990e-fb4a3302acfc)
+
+![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/29ca2c54-b27f-49e3-bd66-c4f5f74e5f18)
+
+![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/953ea8b5-20a3-473b-8909-4f9fa94c4924)
+
+![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/bc801ddf-e431-4658-8e24-9b55c9d175f3)
+
+
 # Run Locally
 
 ### Clone the project in a folder of your choice
@@ -75,23 +94,6 @@ you'll have to enter name, email and password and then you can access admin pane
 **Server:** Django.
 
 
-## Screenshots
-
-![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/22466417-890d-48de-9c88-398d9fac6225)
-
-![imgae](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/9ea297e3-a7b5-4354-9c36-10ec0c9b68d2)
-
-![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/d6a8c285-6ebd-4601-b7ea-082bb65853e7)
-
-![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/40dd83ac-53c6-4650-bb86-9909c0369c16)
-
-![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/933dc593-a14d-4787-990e-fb4a3302acfc)
-
-![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/29ca2c54-b27f-49e3-bd66-c4f5f74e5f18)
-
-![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/953ea8b5-20a3-473b-8909-4f9fa94c4924)
-
-![image](https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/assets/114291201/bc801ddf-e431-4658-8e24-9b55c9d175f3)
 
 
 ## Authors
