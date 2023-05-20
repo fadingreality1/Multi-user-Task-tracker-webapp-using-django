@@ -93,6 +93,7 @@ you'll have to enter name, email and password and then you can access admin pane
 
 **Server:** Django.
 
+**Database:** SQlite3, we can use any Database with right setup..
 
 
 
