@@ -38,6 +38,14 @@ https://drive.google.com/file/d/1MDFBwBi20awV4WCsdnI2DNqk5lWpLNTC/view?usp=shari
 ```bash
   cd project-location
 ```
+#### Change branch to master branch.
+```bash
+  git checkout master
+```
+#### Delete branch vercel_setup
+```bash
+  git branch --delete vercel_setup
+```
 
 ### Install dependencies.
 
