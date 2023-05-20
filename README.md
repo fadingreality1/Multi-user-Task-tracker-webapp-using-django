@@ -2,6 +2,8 @@
 
 I acknowledge the fact that while logging in, there are errors which i am facing and any suggestions are welcomed.
 
+To run locally, You can refer "Master" branch of same repository.
+
 # Multi User Task Tracker
 
 This web application allows users to register and create task lists with deadlines. Once a task is completed, users can mark it as done and also delete it if necessary. Users have the option to update their profiles or delete their profiles from the database.
