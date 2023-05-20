@@ -4,7 +4,7 @@ I acknowledge the fact that while logging in, there are errors which i am facing
 
 To run locally, You can refer "Master" branch of same repository.
 
-FOR USING IT ON LOCAL MACHINE, REFER TO BRANCH "master"
+# FOR USING IT ON LOCAL MACHINE, REFER TO BRANCH "master"
 
 # Multi User Task Tracker
 
