@@ -54,6 +54,12 @@ https://drive.google.com/file/d/1MDFBwBi20awV4WCsdnI2DNqk5lWpLNTC/view?usp=shari
 
 It will install all the dependencies from Pip.lock file.
 
+#### Start the virtual enviroment,
+
+```bash
+  pipenv shell
+```
+
 #### Making migrations or structure for database.
 
 ```bash
