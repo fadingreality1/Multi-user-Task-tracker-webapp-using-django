@@ -37,7 +37,7 @@ https://drive.google.com/file/d/1MDFBwBi20awV4WCsdnI2DNqk5lWpLNTC/view?usp=shari
 ### Clone the project in a folder of your choice
 
 ```bash
-  git clone https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django
+  git clone -b master --single-branch https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django
 ```
 
 ### Go to the project directory.
