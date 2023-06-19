@@ -84,7 +84,7 @@ it will create sqlite3 database file in your directory.
 #### Or create super user to manage and access admin panel.
 
 ```bash
-    python manage.py makesuperuser
+    python manage.py createsuperuser
 ```
 you'll have to enter name, email and password and then you can access admin panel.
 
