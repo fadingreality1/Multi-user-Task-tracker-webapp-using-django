@@ -14,3 +14,11 @@ class Tasks(models.Model):
     due_date = models.DateField(auto_now_add=False, default=timezone.now)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
+    
+class VUser(models.Model):
+    ip = models.CharField(max_length=100,unique=True)
+    arrived_first = models.DateTimeField(default=timezone.now)
+    last_seen = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"user is {self.ip}"

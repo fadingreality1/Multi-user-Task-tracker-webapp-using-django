@@ -4,9 +4,16 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from tasks.forms import TaskForm, UpdateForm, NewUserForm, ProfileUpdateForm
-from tasks.models import Tasks
+from tasks.models import Tasks, VUser
+from tasks.views import get_ip
+from django.utils import timezone
+
 
 def home(req):
+    ip = get_ip(req)
+    viewer, _ = VUser.objects.get_or_create(ip = ip)
+    viewer.last_seen = timezone.now()
+    viewer.save()
     return render(req, "home.html")
 
 def signup(req):
@@ -46,6 +53,10 @@ def loginUser(req):
 @login_required(login_url="login")
 def neohome(req):
     try:
+        ip = get_ip(req)
+        viewer, _ = VUser.objects.get_or_create(ip = ip)
+        viewer.last_seen = timezone.now()
+        viewer.save()
         if req.user.is_authenticated:
             user = req.user
             form = TaskForm()
