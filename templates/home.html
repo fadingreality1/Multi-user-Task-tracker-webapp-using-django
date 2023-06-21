@@ -11,8 +11,6 @@
 			It is a Multi User Task Tarcker Web application in which user can create their own Tasks or Todos along with deadlines to complete them.<br>
 			User can modify their Tasks and can change their profile details too.
 		</h3>
-		<p>There are currently some issues with loging in and signups, in other words, querying the database and i am working on it.<br>you can help me out with it too on <a style="color: navy" href="https://github.com/fadingreality1/Multi-user-Task-tracker-webapp-using-django/">🔗 github</a>
-		</p>
 		{% if request.user.is_authenticated %}
 		<a href="{% url 'neohome' %}" class="button button-primary"><i class="fas fa-laptop" style='font-size:18px'></i> My Tasks</a>
 		{% else %}
