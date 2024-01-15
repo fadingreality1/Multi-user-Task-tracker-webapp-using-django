@@ -1,5 +1,6 @@
 from django.contrib import admin
-from tasks.models import Tasks
+from tasks.models import Tasks, VUser
+
 
 
 class TaskAdmin(admin.ModelAdmin):
@@ -7,3 +8,4 @@ class TaskAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Tasks, TaskAdmin)
+admin.site.register(VUser)
